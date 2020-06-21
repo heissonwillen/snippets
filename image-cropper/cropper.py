@@ -5,7 +5,7 @@ GRID_DIMENSION = 10
 
 image = Image.open("image.jpg")
 
-width, height = tuple([int(dimension/GRID_DIMENSION) for dimension in list(image.size)])
+width, height = [int(dimension/GRID_DIMENSION) for dimension in list(image.size)]
 
 for i in range(GRID_DIMENSION):
     for j in range(GRID_DIMENSION):
