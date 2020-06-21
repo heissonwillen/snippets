@@ -131,3 +131,5 @@ dmypy.json
 
 # Images (for image-cropper)
 image-cropper/cropped_images/*
+image-cropper/image.jpg*
+image-cropper/image.jpeg*
