@@ -10,6 +10,10 @@ people = [
     {
         "name": "laura",
         "age": 18
+    },
+    {
+        "name": "heison",
+        "age": 19
     }
 ]
 
