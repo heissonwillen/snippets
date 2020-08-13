@@ -12,7 +12,7 @@ people = [
         "age": 18
     },
     {
-        "name": "heison",
+        "name": "heisson",
         "age": 19
     }
 ]
