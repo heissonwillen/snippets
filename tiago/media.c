@@ -6,9 +6,9 @@ int main(){
   printf("Digite a primeira nota: ");
   scanf("%f", &nota_1);
   printf("Digite a segunda nota: ");
-  scanf("%f", &nota_1);
+  scanf("%f", &nota_2);
   printf("Digite a terceira nota: ");
-  scanf("%f", &nota_1);
+  scanf("%f", &nota_3);
 
   media = (nota_1+nota_2+nota_3)/3;
 
