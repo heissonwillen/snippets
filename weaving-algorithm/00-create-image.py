@@ -14,10 +14,10 @@ image = Image.new(
     color=COLOR
 )
 
-theta = pi/NUMBER_OF_NAILS
+theta = 2*pi/NUMBER_OF_NAILS
 nails_coordinates = []
 
-for n in range(-NUMBER_OF_NAILS, NUMBER_OF_NAILS):
+for n in range(NUMBER_OF_NAILS):
     nails_coordinates.append((
         int(image.size[0]/2 + cos(n*theta)*RADIUS),
         int(image.size[1]/2 + sin(n*theta)*RADIUS)
@@ -28,8 +28,8 @@ ImageDraw.Draw(image).point(
     fill=FILL
 )
 
-for i in range(-NUMBER_OF_NAILS, NUMBER_OF_NAILS):
-    for j in range(-NUMBER_OF_NAILS, NUMBER_OF_NAILS):
+for i in range(NUMBER_OF_NAILS):
+    for j in range(NUMBER_OF_NAILS):
         ImageDraw.Draw(image).line(
             xy=[nails_coordinates[i], nails_coordinates[j]],
             fill=FILL,
