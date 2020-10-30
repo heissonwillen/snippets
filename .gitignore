@@ -136,3 +136,7 @@ dmypy.json
 image-cropper/cropped_images/*
 image-cropper/image.jpg*
 image-cropper/image.jpeg*
+
+
+# Secrets files
+secrets.py
