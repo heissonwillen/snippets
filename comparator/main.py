@@ -13,10 +13,3 @@ for index, (my_line, feedback_line) in enumerate(zip(my_lines, feedback_lines)):
 
 
 print(1-diff/len(my_lines))
-
-
-# a = [1, 2, 3]
-# b = [2, 5, 6]
-
-# zip(a, b)
-# [(1, 2), (2, 5), (3, 6)]
