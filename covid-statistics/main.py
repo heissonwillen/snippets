@@ -30,7 +30,11 @@ def describe(endpoint):
     print()
 
 if __name__ == '__main__':
+    print('MA_CONFIRMED')
     describe(MA_CONFIRMED)
+    print('MA_DEATHS')
     describe(MA_DEATHS)
+    print('PI_CONFIRMED')
     describe(PI_CONFIRMED)
+    print('PI_DEATHS')
     describe(PI_DEATHS)
