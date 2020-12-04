@@ -1,7 +1,12 @@
 import requests
 from math import sqrt
 from statistics import median, mean, stdev, mode
-from constants import MA_CONFIRMED, MA_DEATHS, PI_CONFIRMED, PI_DEATHS
+
+MA_CONFIRMED = 'https://www.corona.ma.gov.br/public/api/casos/confirmados.json'
+MA_DEATHS = 'https://www.corona.ma.gov.br/public/api/casos/obitos.json'
+
+PI_CONFIRMED = 'http://coronavirus.pi.gov.br/public/api/casos/confirmados.json'
+PI_DEATHS = 'http://coronavirus.pi.gov.br/public/api/casos/obitos.json'
 
 def describe(endpoint):
     data = requests.get(endpoint)
