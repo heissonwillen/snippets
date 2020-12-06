@@ -1,40 +1,33 @@
 import requests
 from math import sqrt
-from statistics import median, mean, stdev, mode
+from statistics import median, mean, stdev, mode, variance
 
-MA_CONFIRMED = 'https://www.corona.ma.gov.br/public/api/casos/confirmados.json'
-MA_DEATHS = 'https://www.corona.ma.gov.br/public/api/casos/obitos.json'
+urls = [
+    'https://www.corona.ma.gov.br/public/api/casos/confirmados.json',
+    'https://www.corona.ma.gov.br/public/api/casos/obitos.json',
+    'http://coronavirus.pi.gov.br/public/api/casos/confirmados.json',
+    'http://coronavirus.pi.gov.br/public/api/casos/obitos.json',
+]
 
-PI_CONFIRMED = 'http://coronavirus.pi.gov.br/public/api/casos/confirmados.json'
-PI_DEATHS = 'http://coronavirus.pi.gov.br/public/api/casos/obitos.json'
+def describe(url):
+    data = requests.get(url)
+    cases = data.json()
+    cases[0]['novos'] = 0
+    new_cases = [0]
+    
+    for i in range(1, len(cases)):
+        cases[i]['quantidade'] = int(cases[i]['quantidade'])
+        new_cases.append(int(cases[i]['quantidade']) - int(cases[i-1]['quantidade']))
 
-def describe(endpoint):
-    data = requests.get(endpoint)
-    data_list = data.json()
-
-    for i in range(len(data_list)):
-        data_list[i]['quantidade'] = int(data_list[i]['quantidade'])
-        if i == 0:
-            data_list[i]['novos'] = 0
-        else:
-            data_list[i]['novos'] = int(data_list[i]['quantidade']) - int(data_list[i-1]['quantidade'])
-
-    new = [x['novos'] for x in data_list]
-
-    print(f'median: {median(new)}')
-    print(f'mean: {mean(new)}')
-    print(f'stdev: {stdev(new)}')
-    print(f'mode: {mode(new)}')
-    print(f'max: {max(new)}, {data_list[new.index(max(new))]["data"].split("T")[0] }')
-    print(f'min: {min(new)}, {data_list[new.index(min(new))]["data"].split("T")[0] }')
-    print()
+    print(f'median: {median(new_cases)}')
+    print(f'mean: {mean(new_cases)}')
+    print(f'stdev: {stdev(new_cases)}')
+    print(f'variance: {variance(new_cases)}')
+    print(f'mode: {mode(new_cases)}')
+    print(f'max: {max(new_cases)}, {cases[new_cases.index(max(new_cases))]["data"].split("T")[0] }')
+    print(f'min: {min(new_cases)}, {cases[new_cases.index(min(new_cases))]["data"].split("T")[0] }\n')
 
 if __name__ == '__main__':
-    print('MA_CONFIRMED')
-    describe(MA_CONFIRMED)
-    print('MA_DEATHS')
-    describe(MA_DEATHS)
-    print('PI_CONFIRMED')
-    describe(PI_CONFIRMED)
-    print('PI_DEATHS')
-    describe(PI_DEATHS)
+    for url in urls:
+        print(url)
+        describe(url)
