@@ -1,5 +1,4 @@
 import requests
-from math import sqrt
 from statistics import median, mean, stdev, mode, variance
 
 urls = [
