@@ -13,7 +13,7 @@ with open('datasets/obitos-sp.csv', 'r') as data_file:
             new_cases.append(int(0))
 
         try:
-            new_deaths.append(int(row[2]))
+            new_deaths.append(int(row[3]))
         except ValueError:
             new_deaths.append(int(0))
 
