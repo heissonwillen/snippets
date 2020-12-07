@@ -17,9 +17,9 @@ with open('datasets/obitos-sp.csv', 'r') as data_file:
         except ValueError:
             new_deaths.append(int(0))
 
-    print(f'median: {median(new_cases)}')
-    print(f'mean: {mean(new_cases)}')
-    print(f'stdev: {stdev(new_cases)}')
-    print(f'variance: {variance(new_cases)}')
-    print(f'mode: {mode(new_cases)}')
-    print(f'max: {max(new_cases)}')
+print(f'median: {median(new_cases)}')
+print(f'mean: {mean(new_cases)}')
+print(f'stdev: {stdev(new_cases)}')
+print(f'variance: {variance(new_cases)}')
+print(f'mode: {mode(new_cases)}')
+print(f'max: {max(new_cases)}')
