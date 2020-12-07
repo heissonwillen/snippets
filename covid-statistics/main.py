@@ -18,6 +18,7 @@ def describe(url):
         cases[i]['quantidade'] = int(cases[i]['quantidade'])
         new_cases.append(int(cases[i]['quantidade']) - int(cases[i-1]['quantidade']))
 
+    print(f'url: {url}')
     print(f'median: {median(new_cases)}')
     print(f'mean: {mean(new_cases)}')
     print(f'stdev: {stdev(new_cases)}')
@@ -26,7 +27,5 @@ def describe(url):
     print(f'max: {max(new_cases)}, {cases[new_cases.index(max(new_cases))]["data"].split("T")[0] }')
     print(f'min: {min(new_cases)}, {cases[new_cases.index(min(new_cases))]["data"].split("T")[0] }\n')
 
-if __name__ == '__main__':
-    for url in urls:
-        print(url)
-        describe(url)
+for url in urls:
+    describe(url)
