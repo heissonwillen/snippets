@@ -132,7 +132,7 @@ dmypy.json
 .pyre/
 
 
-# Images (for image-cropper)
+# Images (image-cropper)
 image-cropper/cropped_images/*
 image-cropper/image.jpg*
 image-cropper/image.jpeg*
@@ -140,3 +140,9 @@ image-cropper/image.jpeg*
 
 # Secrets files
 secrets.py
+
+# Audio files (speech-recognition)
+audio-files/
+audio-files/*
+
+test00.json
